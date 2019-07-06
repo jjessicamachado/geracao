@@ -41,7 +41,7 @@ class Sidebar extends Component {
   }
   render() {
     const sidebarBackground = {
-      backgroundImage: "url(" + this.props.image + ")"
+      backgroundImage: "none"
     };
     return (
       <div
@@ -68,7 +68,7 @@ class Sidebar extends Component {
             href="https://www.creative-tim.com?ref=lbd-sidebar"
             className="simple-text logo-normal"
           >
-            Creative Tim
+            IACOS
           </a>
         </div>
         <div className="sidebar-wrapper">
