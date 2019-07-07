@@ -24,13 +24,6 @@ const dashboardRoutes = [
     icon: "pe-7s-user",
     component: Single,
     layout: "/admin"
-  },
-  {
-    path: "/login",
-    name: "Login",
-    icon: "pe-7s-user",
-    component: Login,
-    layout: "/admin"
   }
 ];
 
