@@ -1,7 +1,6 @@
-import Dashboard from "views/Dashboard.jsx";
-import Calls from "views/Calls.jsx";
-import Single from "views/Single.jsx";
-import Login from "views/Login.jsx";
+import Dashboard from "views/ons/Dashboard.jsx";
+import Calls from "views/ons/Calls.jsx";
+import Single from "views/ons/Single.jsx";
 
 const dashboardRoutes = [
   {

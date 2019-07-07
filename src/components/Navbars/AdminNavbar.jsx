@@ -48,9 +48,6 @@ class Header extends Component {
     return (
       <Navbar fluid>
         <Navbar.Header>
-          <Navbar.Brand>
-            <h1>Teste</h1>
-          </Navbar.Brand>
           <Navbar.Toggle onClick={this.mobileSidebarToggle} />
         </Navbar.Header>
         <Navbar.Collapse>

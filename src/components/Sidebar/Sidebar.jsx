@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 import AdminNavbarLinks from "../Navbars/AdminNavbarLinks.jsx";
 
-import logo from "assets/img/energy.svg";
+import logoSys from "assets/img/engielogo.png";
 
 class Sidebar extends Component {
   constructor(props) {
@@ -39,20 +39,17 @@ class Sidebar extends Component {
           ) : (
             null
           )}
-        <div className="logo">
+        <div className="logo" style={{backgroundColor: "white"}}>
           <a
             href="/"
             className="simple-text logo-mini"
           >
-            <div className="logo-img">
-              <img src={logo} alt="logo_image" />
-            </div>
           </a>
           <a
             href="/"
             className="simple-text logo-normal"
           >
-            IACOS
+            <img src={logoSys} width="100"></img>
           </a>
         </div>
         <div className="sidebar-wrapper">

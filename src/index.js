@@ -34,7 +34,6 @@ ReactDOM.render(
       <Route path="/" exact={true} component={Login} />
       <Route path="/ons" render={props => <OnsLayout {...props} />} />
       <Route path="/op" render={props => <OpLayout {...props} />} />
-      
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")

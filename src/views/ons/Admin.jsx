@@ -7,7 +7,7 @@ import Sidebar from "components/Sidebar/Sidebar";
 
 import { style } from "variables/Variables.jsx";
 
-import routes from "routes.js";
+import routes from "routesOns.js";
 
 
 class Admin extends Component {
@@ -25,7 +25,7 @@ class Admin extends Component {
       if (prop.layout === "/ons") {
         return (
           <Route
-            path={"/ons"+ prop.path}
+            path={"/ons" + prop.path}
             render={props => (
               <prop.component
                 {...props}
@@ -36,6 +36,7 @@ class Admin extends Component {
           />
         );
       } else {
+        console.log(prop);
         return null;
       }
     });
