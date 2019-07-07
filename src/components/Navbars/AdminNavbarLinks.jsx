@@ -33,7 +33,7 @@ class AdminNavbarLinks extends Component {
 
         <Nav pullRight>
           <NavItem eventKey={3} href="#">
-            Deslogar
+            Logout
           </NavItem>
         </Nav>
         <Nav pullRight>
@@ -49,11 +49,6 @@ class AdminNavbarLinks extends Component {
             <MenuItem eventKey={2.4}>Notification 4</MenuItem>
             <MenuItem eventKey={2.5}>Another notifications</MenuItem>
           </NavDropdown>
-        </Nav>
-        <Nav pullRight>
-        <NavItem eventKey={1} href="#">
-            Conta
-        </NavItem>
         </Nav>
       </div>
     );

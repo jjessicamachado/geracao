@@ -1,0 +1,35 @@
+.login{
+    display:flex;
+    width:900px;
+    border:1px solid red;
+    margin:0 auto;
+    align-items:stretch;
+    flex-direction: row;
+}
+
+.loginBox{
+    border:1px solid black;
+    width:400px;
+    text-align:center;
+}
+
+.row{
+    margin:0 !important;
+}
+
+h3{
+    color:#5DBCD2;
+    font-size:16px;
+    display:inline-block;
+    width:70px;
+    margin:0;
+}
+
+
+button{
+    margin-top:10px;
+    border-radius: 6px;
+    padding:0px 80px;
+    background-color:#5DBCD2;
+    color:white;
+}

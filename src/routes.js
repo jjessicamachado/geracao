@@ -1,6 +1,7 @@
 import Dashboard from "views/Dashboard.jsx";
-import UserProfile from "views/UserProfile.jsx";
-import TableList from "views/TableList.jsx";
+import Calls from "views/Calls.jsx";
+import Single from "views/Single.jsx";
+import Login from "views/Login.jsx";
 
 const dashboardRoutes = [
   {
@@ -11,17 +12,24 @@ const dashboardRoutes = [
     layout: "/admin"
   },
   {
-    path: "/user",
-    name: "User Profile",
+    path: "/calls",
+    name: "Chamadas",
     icon: "pe-7s-user",
-    component: UserProfile,
+    component: Calls,
     layout: "/admin"
   },
   {
-    path: "/table",
-    name: "Table List",
-    icon: "pe-7s-note2",
-    component: TableList,
+    path: "/history",
+    name: "Histórico",
+    icon: "pe-7s-user",
+    component: Single,
+    layout: "/admin"
+  },
+  {
+    path: "/login",
+    name: "Login",
+    icon: "pe-7s-user",
+    component: Login,
     layout: "/admin"
   }
 ];
