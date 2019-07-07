@@ -1,68 +1,40 @@
 import React, { Component } from "react";
-import { Grid, Row, Col, Table } from "react-bootstrap";
+import Audio from "assets/audio.mp3";
 
-import Card from "components/Card/Card.jsx";
-import { thArray} from "variables/Variables.jsx";
 
 class Single extends Component {
   constructor(){
     super();
     this.state = {
-      calls: [],
     }
   };
-    componentDidMount() {
-      fetch('https://api.myjson.com/bins/r05bf')
-      .then(results => {
-        return results.json();
-      }).then(data => {
-        this.setState({calls: data});
-      }) 
-    }
     
   render(){
     return (
-      <div className="content">
-        <Grid fluid>
-          <Row>
-            <Col md={12}>
-              <Card
-                title="Histórico"
-                ctTableFullWidth
-                ctTableResponsive
-                content={
-                  <Table striped hover>
-                    <thead>
-                      <tr>
-                        {thArray.map((prop, key) => {
-                          return <th key={key}>{prop}</th>;
-                        })}
-                      </tr>
-                    </thead>
-                    
-                    <tbody>
-                    {this.state.calls.map(function(call, key) {
-             
-             return (
-                <tr key = {key}>
-                    <td>{call.data}</td>
-                    <td>{call.requerente}</td>
-                    <td>{call.responsavel}</td>
-                    <td>{call.tipo} {call.valor} {call.metrica} na {call.destino}</td>
-                    <td>{call.complexidade}</td>
-                    <td>{call.status}</td>
-                </tr>
-              )
-           
-           })}
-                    </tbody>
-                  </Table>
-                }
-              />
-            </Col>
-          </Row>
-        </Grid>
-      </div>
+      <div class="boxSolicitacao">
+        <h2 id="subSol">Solicitação</h2><br></br>
+        <b>Solicitado em:</b> 26/06/2019<br></br>
+        <b>Agente requisidor:</b> ONS<br></br>
+        <b>Solicitante:</b> José Antonio<br></br>
+        <b>Agente solicitado:</b> ONS<br></br>
+        <b>Responsável:</b>  Antonio Machado<br></br>
+        <b>Complexidade:</b> Simples<br></br>
+        <b>Manobra:</b><br></br>
+
+        <b>Agendamento:</b> 26/06/2019 22:01:00<br></br>
+        <b>Solicitação:</b>
+        <textarea>
+            Prado você já tá com sono isso aí ele tá 4% quase 4% desse jeito 
+            Agora nós estamos orando a manutenção toda hora para verificar lock 
+            Oi sobrecorrente isso mesmo valeu até mais obrigado testando este é o seguinte dia 25 né 
+            Isso chega a 10% no parque Ok você vai buscar aqui tá bom você me diz aí o pessoal que sabe o que operou 25oc sobre a corrente que você for tiver alguma posição 
+            Se Liga para mim para voltar OK tá bom obrigado aí viu até mais tchau
+        </textarea>
+        <audio controls>
+        <source src={Audio} type="audio/ogg"></source>
+        Your browser does not support the audio element.
+        </audio>
+    </div>
     );
   }
 }

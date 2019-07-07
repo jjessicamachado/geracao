@@ -49,7 +49,7 @@ class Sidebar extends Component {
             href="/"
             className="simple-text logo-normal"
           >
-            <img src={logoSys} width="100"></img>
+            <img src={logoSys} alt="logo" width="100"></img>
           </a>
         </div>
         <div className="sidebar-wrapper">

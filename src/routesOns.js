@@ -1,6 +1,7 @@
 import Dashboard from "views/ons/Dashboard.jsx";
 import Calls from "views/ons/Calls.jsx";
 import Single from "views/ons/Single.jsx";
+import Log from "views/ons/Log.jsx";
 
 const dashboardRoutes = [
   {
@@ -21,6 +22,13 @@ const dashboardRoutes = [
     path: "/history",
     name: "Histórico",
     icon: "pe-7s-user",
+    component: Log,
+    layout: "/ons"
+  },
+  {
+    path: "/scall",
+    name: "SingleCall",
+    icon: "pe-7s-clock",
     component: Single,
     layout: "/ons"
   }

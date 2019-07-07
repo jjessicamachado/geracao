@@ -23,6 +23,7 @@ class Admin extends Component {
   getRoutes = routes => {
     return routes.map((prop, key) => {
       if (prop.layout === "/op") {
+        console.log(prop);
         return (
           <Route
             path={"/op" + prop.path}

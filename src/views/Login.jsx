@@ -1,5 +1,4 @@
-import ReactDOM from "react-dom";
-import React, { BrowserRouter, Switch, Router , Component} from 'react';
+import React, {Component} from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../assets/css/login.css";
 import logoEngie from "../assets/img/engielogo.png";
@@ -13,11 +12,11 @@ class Login extends Component{
 render(){
 
   function toDashboardOns(){
-    window.location = "/ons/dashboard";
+    window.location = "/ons/calls";
   }
 
   function toDashboardOp(){
-    window.location = "/op/dashboard";
+    window.location = "/op/calls";
   }
 
   return(

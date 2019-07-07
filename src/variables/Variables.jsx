@@ -266,7 +266,8 @@ var style = {
 // // // For tables
 // //
 //
-const thArray = ["SOLICITADO EM", "REQUERENTE", "RESPONSÁVEL", "SOLICITAÇÃO", "CRITICIDADE", "STATUS"];
+const thArray = ["SOLICITADO EM", "REQUERENTE", "LOCAL", "SOLICITAÇÃO", "CRITICIDADE", "STATUS", ""];
+const thArrayOp = ["SOLICITADO EM", "REQUERENTE", "RESPONSÁVEL", "SOLICITAÇÃO", ""];
 
 
 //
@@ -594,6 +595,7 @@ var legendBar = {
 module.exports = {
   style, // For notifications (App container and Notifications view)
   thArray,
+  thArrayOp,
   iconsArray, // For icons (Icons view)
   dataPie,
   legendPie,

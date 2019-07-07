@@ -3,9 +3,8 @@ import { Grid, Row, Col, Table } from "react-bootstrap";
 
 import Card from "components/Card/Card.jsx";
 import { thArray} from "variables/Variables.jsx";
-import Link from "assets/img/link.png";
 
-class TableList extends Component {
+class Log extends Component {
   constructor(){
     super();
     this.state = {
@@ -22,17 +21,13 @@ class TableList extends Component {
     }
     
   render(){
-    function handleClick(id) {
-      window.location = "/ons/scall/";
-    }
     return (
       <div className="content">
         <Grid fluid>
           <Row>
             <Col md={12}>
               <Card
-                title="Últimas Solicitações"
-                category="Atualizado há 1 minuto."
+                title="Histórico"
                 ctTableFullWidth
                 ctTableResponsive
                 content={
@@ -55,8 +50,7 @@ class TableList extends Component {
                     <td>{call.usina}</td>
                     <td>{call.tags}</td>
                     <td>{call.complexidade}</td>
-                    <td>A FAZER</td>
-                    <td><button class="iconBtn" onClick={() => handleClick(call.id)}><img src={Link} alt="link" class="smallIcon"></img></button></td>
+                    <td>{call.status}</td>
                 </tr>
               )
            
@@ -74,4 +68,4 @@ class TableList extends Component {
 }
 
 
-export default TableList;
+export default Log;

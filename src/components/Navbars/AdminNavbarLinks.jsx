@@ -23,15 +23,19 @@ class AdminNavbarLinks extends Component {
   render() {
     const notification = (
       <div>
-        <i className="fa fa-globe" />
+        <i className="pe-7s-bell" />
         <b className="caret" />
-        <span className="notification">0</span>
+        <span className="notification">4</span>
         <p className="hidden-lg hidden-md">Notification</p>
       </div>
     );
     return (
       <div>
-
+                <Nav pullLeft>
+          <NavItem eventKey={1} href="#att">
+            Atualizado há 30 segundos.
+          </NavItem>
+        </Nav>
         <Nav pullRight>
           <NavItem eventKey={3} href="./logout">
             Logout
@@ -44,11 +48,10 @@ class AdminNavbarLinks extends Component {
             noCaret
             id="basic-nav-dropdown"
           >
-            <MenuItem eventKey={2.1}>Notification 1</MenuItem>
-            <MenuItem eventKey={2.2}>Notification 2</MenuItem>
-            <MenuItem eventKey={2.3}>Notification 3</MenuItem>
-            <MenuItem eventKey={2.4}>Notification 4</MenuItem>
-            <MenuItem eventKey={2.5}>Another notifications</MenuItem>
+            <MenuItem eventKey={2.1}>Usina X aumentou em 70Kv</MenuItem>
+            <MenuItem eventKey={2.2}>Nova Solicitação!</MenuItem>
+            <MenuItem eventKey={2.3}>Usina Y aumentará 200Kv em 10min</MenuItem>
+            <MenuItem eventKey={2.4}>Usina Barra Funda diminuirá para potência mínima.</MenuItem>
           </NavDropdown>
         </Nav>
       </div>

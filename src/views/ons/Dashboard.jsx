@@ -1,17 +1,25 @@
 
 import React, { Component } from "react";
+import ChartistGraph from "react-chartist";
+import { Grid, Row, Col } from "react-bootstrap";
 
-const API = 'https://hn.algolia.com/api/v1/search?query=';
-const DEFAULT_QUERY = 'redux';
+import { Card } from "components/Card/Card.jsx";
+import { StatsCard } from "components/StatsCard/StatsCard.jsx";
+import { Tasks } from "components/Tasks/Tasks.jsx";
+import {
+  dataPie,
+  legendPie,
+  dataSales,
+  optionsSales,
+  responsiveSales,
+  legendSales,
+  dataBar,
+  optionsBar,
+  responsiveBar,
+  legendBar
+} from "variables/Variables.jsx";
 
 class Dashboard extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      hits: [],
-    };
-  }
   createLegend(json) {
     var legend = [];
     for (var i = 0; i < json["names"].length; i++) {
@@ -22,25 +30,135 @@ class Dashboard extends Component {
     }
     return legend;
   }
-
-  componentDidMount() {
-    fetch(API + DEFAULT_QUERY)
-      .then(response => response.json())
-      .then(data => this.setState({ hits: data.hits }));
-  }
   render() {
-    const { hits } = this.state;
-
     return (
-      <ul>
-        {hits.map(hit =>
-          <li key={hit.objectID}>
-            <a href={hit.url}>{hit.title}</a>
-          </li>
-        )}
-      </ul>
+      <div className="content">
+        <Grid fluid>
+          <Row>
+            <Col lg={3} sm={6}>
+              <StatsCard
+                bigIcon={<i className="pe-7s-server text-success" />}
+                statsText="Produção"
+                statsValue="800Kv"
+                statsIcon={<i className="fa fa-refresh" />}
+                statsIconText="Updated now"
+              />
+            </Col>
+            <Col lg={3} sm={6}>
+              <StatsCard
+                bigIcon={<i className="pe-7s-attention text-warning" />}
+                statsText="Alertas"
+                statsValue="3"
+                statsIcon={<i className="fa fa-calendar-o" />}
+                statsIconText="Last day"
+              />
+            </Col>
+            <Col lg={3} sm={6}>
+              <StatsCard
+                bigIcon={<i className="pe-7s-close-circle text-danger" />}
+                statsText="Erros"
+                statsValue="2"
+                statsIcon={<i className="fa fa-clock-o" />}
+                statsIconText="In the last hour"
+              />
+            </Col>
+            <Col lg={3} sm={6}>
+              <StatsCard
+                bigIcon={<i className="pe-7s-call text-info" />}
+                statsText="Chamadas"
+                statsValue="120"
+                statsIcon={<i className="fa fa-refresh" />}
+                statsIconText="Updated now"
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col md={8}>
+              <Card
+                statsIcon="fa fa-history"
+                id="chartHours"
+                title="Comportamento de geração"
+                category="Últimas 24 horas"
+                stats="Updated 3 minutes ago"
+                content={
+                  <div className="ct-chart">
+                    <ChartistGraph
+                      data={dataSales}
+                      type="Line"
+                      options={optionsSales}
+                      responsiveOptions={responsiveSales}
+                    />
+                  </div>
+                }
+                legend={
+                  <div className="legend">{this.createLegend(legendSales)}</div>
+                }
+              />
+            </Col>
+            <Col md={4}>
+              <Card
+                statsIcon="fa fa-clock-o"
+                title="Operação por gerador"
+                category="No último dia"
+                stats="Campaign sent 2 days ago"
+                content={
+                  <div
+                    id="chartPreferences"
+                    className="ct-chart ct-perfect-fourth"
+                  >
+                    <ChartistGraph data={dataPie} type="Pie" />
+                  </div>
+                }
+                legend={
+                  <div className="legend">{this.createLegend(legendPie)}</div>
+                }
+              />
+            </Col>
+          </Row>
+
+          <Row>
+            <Col md={6}>
+              <Card
+                id="chartActivity"
+                title="Engie"
+                category="Operação em 2019"
+                stats="Data information certified"
+                statsIcon="fa fa-check"
+                content={
+                  <div className="ct-chart">
+                    <ChartistGraph
+                      data={dataBar}
+                      type="Bar"
+                      options={optionsBar}
+                      responsiveOptions={responsiveBar}
+                    />
+                  </div>
+                }
+                legend={
+                  <div className="legend">{this.createLegend(legendBar)}</div>
+                }
+              />
+            </Col>
+
+            <Col md={6}>
+              <Card
+                title="Datas Importantes"
+                category=""
+                stats="Updated 3 minutes ago"
+                statsIcon="fa fa-history"
+                content={
+                  <div className="table-full-width">
+                    <table className="table">
+                      <Tasks />
+                    </table>
+                  </div>
+                }
+              />
+            </Col>
+          </Row>
+        </Grid>
+      </div>
     );
-    
   }
 }
 

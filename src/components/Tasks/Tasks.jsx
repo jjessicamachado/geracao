@@ -32,12 +32,11 @@ export class Tasks extends Component {
     const edit = <Tooltip id="edit_tooltip">Edit Task</Tooltip>;
     const remove = <Tooltip id="remove_tooltip">Remove</Tooltip>;
     const tasks_title = [
-      'Sign contract for "What are conference organizers afraid of?"',
-      "Lines From Great Russian Literature? Or E-mails From My Boss?",
-      "Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroi",
-      "Create 4 Invisible User Experiences you Never Knew About",
-      'Read "Following makes Medium better"',
-      "Unfollow 5 enemies from twitter"
+      'Reunião com Engie para fechar parceria no desenvolvimento do Hermes',
+      "Agendar manuntenção de Usina de Angra",
+      "Final de novela das 9 em 08/07/2019",
+      "Jogo do Brasil 20/08/2019",
+      'Onda de calor em todo o Brasil em 19/07/2019',
     ];
     var tasks = [];
     var number;
